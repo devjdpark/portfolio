@@ -1,7 +1,8 @@
 document.getElementById('get-weather').addEventListener('click', function() {
     const city = document.getElementById('city-input').value;
     const apiKey = '283f57b4a0b5e32925cf3f7063ce40cb'; // OpenWeatherMap API 키를 여기에 입력하세요
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
 
     fetch(apiUrl)
         .then(response => response.json())
